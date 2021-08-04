@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="https://www.layuicdn.com/layui/css/layui.css" />
+  </head>
+
+  <body>
+    <script src="https://www.layuicdn.com/layui/layui.js"></script>
+    <!--您的Layui代码start-->
+    <script type="text/javascript">
+    layui.use(['laydate', 'laypage', 'layer', 'table', 'carousel', 'upload', 'element'], function() {
+      var laydate = layui.laydate //日期
+      ,laypage = layui.laypage //分页
+      ,layer = layui.layer //弹层
+      ,table = layui.table //表格
+      ,carousel = layui.carousel //轮播
+      ,upload = layui.upload //上传
+      ,element = layui.element; //元素操作 等等...
+
+      /*layer弹出一个示例*/
+      layer.msg('Hello World');
+    });
+    </script>
+  </body>
+
+</html>
+
+select a.ul_user,a.ul_linkto,b.usr_name,b.usr_title,b.usr_description,b.usr_mphone,c.org_name,c.org_title,d.usr_bi_name,d.system_code,e.system_name,d.usr_link_name,d.status from BSP_USERLINKS a left join bsp_users b on a.ul_user=b.usr_guid left join bsp_organizations c on a.ul_linkto=c.org_guid left join ZRZYB_SSO_USERLINKS d on b.usr_name=d.usr_bi_name left join ZRZYB_SSO_SIGN e on d.system_code=e.system_code where a.UL_ISORG = '1'  and a.UL_USER in (select usr_guid from bsp_users where USR_NAME in (select USR_BI_NAME from ZRZYB_SSO_USERLINKS where STATUS = '0'))
+
+http://xionglei.jiuqi.com.cn:8080/gbek/external/zjccale/calc.jsp
+admin
+P@ssw0rd
