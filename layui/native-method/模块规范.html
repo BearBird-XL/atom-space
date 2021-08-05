@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../lib/layui/css/layui.css">
+    <title>模块规范</title>
+</head>
+
+<body>
+    <script src="../../lib/layui/layui.js"></script>
+    <p>
+        layui 通过 use 方法加载模块。当你的 JS 需要用到 layui 模块的时候，且避免到处写 layui.use() 的麻烦。你应该在最外层如此定义：
+    </p>
+    <script>
+        layui.use(['form', 'upload'], function(){ //如果只加载一个模块，可以不填数组。如：layui.use('form')
+            var form = layui.form //获取form模块
+            ,upload = layui.upload; //获取upload模块
+            //监听提交按钮
+            form.on('submit(test)', function(data){
+            console.log(data);
+            });
+            //实例化一个上传控件
+            upload({
+                url: '上传接口url'
+                ,success: function(data){
+                console.log(data);
+            }
+            })
+        });
+    </script>
+
+</body>
+
+</html>

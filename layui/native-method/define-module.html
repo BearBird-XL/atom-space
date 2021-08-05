@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="https://www.layuicdn.com/layui/css/layui.css" />
+    <title>自定义模块</title>
+  </head>
+
+  <body>
+    <script src="https://www.layuicdn.com/layui/layui.js"></script>
+    <!--您的Layui代码start-->
+    <script type="text/javascript">
+        // 定义模块
+        // layui.define([mods], callback)
+        // 通过该方法可在新的 JS 文件中定义一个 layui 模块。
+        // 参数 mods 是可选的，用于声明该模块所依赖的模块。
+        // callback 即为模块加载完毕的回调函数，它返回一个 exports 参数，用于输出该模块的接口。
+        layui.define(function(exports){
+            // do something
+
+            exports('demo', {
+                msg: 'Hello, Demo'
+            });
+        });
+        
+        layer.msg(layui.demo.msg);
+        
+    </script>
+  </body>
+
+</html>

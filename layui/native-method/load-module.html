@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="https://www.layuicdn.com/layui/css/layui.css" />
+    <title>加载模块</title>
+  </head>
+
+  <body>
+    <script src="https://www.layuicdn.com/layui/layui.js"></script>
+    <!--您的Layui代码start-->
+    <script type="text/javascript">
+        // 加载模块 layui.use([mods], callback)
+        // 参数：mods:如果填写, 必须是一个layui合法的模块名(不能包含目录)
+        // 参数：callback: 即为模块加载完毕的回调函数
+        layui.define(function(exports){
+            // do something
+            console.log("Hello, World"); // 初始哈生产模块是执行, 应用模块时不执行
+            exports('demo', {
+                msg: 'Hello, Demo'
+            });
+        });
+
+
+        layui.use(['layer', 'demo', 'laydate', 'table'], function(){
+            let demo = layui.demo;
+            let layer = layui.layer;
+            let table = layui.table;
+            // do something
+            layer.msg("use layui module success[" + demo.msg + "]");
+            table.render();
+            
+        })
+    
+        
+    </script>
+  </body>
+
+</html>
